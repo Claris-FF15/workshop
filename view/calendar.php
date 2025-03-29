@@ -4,64 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calendrier des Tâches</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
-            flex-direction: column;
-        }
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 90%;
-            max-width: 1000px;
-            margin-bottom: 20px;
-        }
-        .calendar {
-            width: 90%;
-            max-width: 1000px;
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 10px;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .day {
-            background: #fff;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            min-height: 100px;
-        }
-        .day h3 {
-            margin: 0;
-            font-size: 16px;
-            color: #333;
-        }
-        .tasks {
-            margin-top: 5px;
-            font-size: 14px;
-            color: #666;
-        }
-        .nav button {
-            padding: 10px 15px;
-            border: none;
-            background: #007bff;
-            color: white;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .nav button:hover {
-            background: #0056b3;
-        }
-    </style>
+    <link rel="icon" href="../view/icon.png" type="image/png">
+    <!-- CSS -->
+    <link rel="stylesheet"href="../style/calendar.css">
 </head>
 <body>
     <div class="header">
