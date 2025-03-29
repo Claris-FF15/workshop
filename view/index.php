@@ -8,17 +8,19 @@
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
   <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
   <!-- CSS -->
   <link rel="stylesheet" href="../style/main.css">
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 </head>
 <body>
-
   <main class="d-flex w-100">
     <!-- Sidebar -->
     <section class="d-flex flex-column flex-shrink-0 bg-light Sidebar">
@@ -50,15 +52,14 @@
         </a>
         <ul class="dropdown-menu text-small shadow">
           <li><a class="dropdown-item" href="../public/index.php?action=profile" style="color:rosybrown;font-family: 'Playfair Display', serif;
-    font-style: italic;">Profil</a></li>
+          font-style: italic;">Profil</a></li>
           <li><hr class="dropdown-divider"></li>
           <li><a class="dropdown-item" href="../public/index.php?action=logout" style="color:rosybrown;font-family: 'Playfair Display', serif;
-    font-style: italic;">Déconnexion</a></li>
+          font-style: italic;">Déconnexion</a></li>
         </ul>
       </div>
     </section>
-
-    <!-- Main content -->
+    <!-- Main section -->
     <section class="container-fluid py-4">
       <h3 class="text-center title-list">Liste des tâches :</h3>
       <div class="row">
@@ -73,65 +74,60 @@
           </h5>
           <div class="d-flex flex-column align-items-center justify-content-center w-100">
             <div class="list-group mt-1" style="min-width: 400px;max-width:400px">
-            <?php
-              $today = date("Y-m-d");
-            ?>
-            <?php foreach ($tasks as $task): ?>
+              <?php
+                $today = date("Y-m-d");
+              ?>
+              <?php foreach ($tasks as $task): ?>
                 <?php if ($task['id_user'] == $_SESSION['id_user'] && $task['end_time_task'] == $today && $task['important_task'] == 1 && $task['repeat_task'] == 0 && $task['statut_task'] == 0): ?>
                     <div class="list-group-item d-flex gap-2 task-item" style="background-color:rgba(188, 143, 143, 0.48)">
-                        <input class="form-check-input check flex-shrink-0 mt-1" type="checkbox" data-task-id="<?php echo $task['id_task']; ?>" data-repeat-task="0" value="">
-                        <a style="text-decoration:none;" href="../public/index.php?action=details&id=<?php echo $task['id_task']; ?>">
-                            <span class="text-center" style="color:rgb(255, 0, 123);">
-                                <strong><?php echo htmlspecialchars($task['name_task']); ?></strong>
-                                <i class="bi bi-star-fill" style="color: rgb(255, 0, 123); font-size: 15px; margin-left: 50px; justify-content:left;"></i>
-                                <small class="d-block text-body-secondary"><?php echo htmlspecialchars($task['details_task']); ?></small>
-                            </span>
-                        </a>
+                      <input class="form-check-input check flex-shrink-0 mt-1" type="checkbox" data-task-id="<?php echo $task['id_task']; ?>" data-repeat-task="0" value="">
+                      <a style="text-decoration:none;" href="../public/index.php?action=details&id=<?php echo $task['id_task']; ?>">
+                        <span class="text-center" style="color:rgb(255, 0, 123);">
+                            <strong><?php echo htmlspecialchars($task['name_task']); ?></strong>
+                            <i class="bi bi-star-fill" style="color: rgb(255, 0, 123); font-size: 15px; margin-left: 50px; justify-content:left;"></i>
+                            <small class="d-block text-body-secondary"><?php echo htmlspecialchars($task['details_task']); ?></small>
+                        </span>
+                      </a>
                     </div>
                 <?php elseif ($task['id_user'] == $_SESSION['id_user'] && $task['end_time_task'] == $today && $task['important_task'] == 0 && $task['repeat_task'] == 0 && $task['statut_task'] == 0): ?>
                     <div class="list-group-item d-flex gap-2 task-item">
-                        <input class="form-check-input check flex-shrink-0 mt-1" type="checkbox" data-task-id="<?php echo $task['id_task']; ?>" data-repeat-task="0" value="">
-                        <a style="text-decoration:none;color:rosybrown;" href="../public/index.php?action=details&id=<?php echo $task['id_task']; ?>">
-                            <span>
-                                <strong><?php echo htmlspecialchars($task['name_task']); ?></strong>
-                                <small class="d-block text-body-secondary"><?php echo htmlspecialchars($task['details_task']); ?></small>
-                            </span>
-                        </a>
+                      <input class="form-check-input check flex-shrink-0 mt-1" type="checkbox" data-task-id="<?php echo $task['id_task']; ?>" data-repeat-task="0" value="">
+                      <a style="text-decoration:none;color:rosybrown;" href="../public/index.php?action=details&id=<?php echo $task['id_task']; ?>">
+                        <span>
+                          <strong><?php echo htmlspecialchars($task['name_task']); ?></strong>
+                          <small class="d-block text-body-secondary"><?php echo htmlspecialchars($task['details_task']); ?></small>
+                        </span>
+                      </a>
                     </div>
                 <?php endif; ?>
-            <?php endforeach; ?>
+              <?php endforeach; ?>
             </div>
           </div>
         </div>
-
         <!-- repetion task -->
         <div class="col-12 mb-4">
           <h5 class="text-center mb-2 mt-2 title-list">
             Tâches répétitives
-            <button type="button" class="mx-2" id="resetRepeatTasksBtn">
-  <i class="bi bi-arrow-repeat" style="font-size: 20px;"></i>
-</button>
-
+            <button type="button" class="mx-2" id="resetRepeatTasksBtn"><i class="bi bi-arrow-repeat" style="font-size: 20px;"></i></button>
           </h5>
           <div class="d-flex flex-column align-items-center justify-content-center w-100">
             <div class="list-group mt-1 " style="min-width: 400px;max-width:400px">
               <?php foreach ($tasks as $task):?>
                 <?php if ($task['id_user'] == $_SESSION['id_user'] && $task['repeat_task'] == 1 && $task['statut_task'] == 0): ?>
                   <div class="list-group-item d-flex gap-2 task-item">
-                  <input class="form-check-input check flex-shrink-0 mt-1" type="checkbox" data-task-id="<?php echo $task['id_task']; ?>" data-repeat-task="1" value="">
-                    <a style="text-decoration:none;color:rosybrown;"href="../public/index.php?action=details&id=<?php echo $task['id_task']; ?>">
-                    <span>
-                      <strong><?php echo htmlspecialchars($task['name_task']); ?></strong>
-                      <small class="d-block text-body-secondary"><?php echo htmlspecialchars($task['details_task']); ?></small>
-                    </span>
-                  </a>
+                    <input class="form-check-input check flex-shrink-0 mt-1" type="checkbox" data-task-id="<?php echo $task['id_task']; ?>" data-repeat-task="1" value="">
+                      <a style="text-decoration:none;color:rosybrown;"href="../public/index.php?action=details&id=<?php echo $task['id_task']; ?>">
+                        <span>
+                          <strong><?php echo htmlspecialchars($task['name_task']); ?></strong>
+                          <small class="d-block text-body-secondary"><?php echo htmlspecialchars($task['details_task']); ?></small>
+                        </span>
+                      </a>
                   </div>
                 <?php endif; ?>
               <?php endforeach;?>
             </div>
           </div>
         </div>
-
         <!-- finished task -->
         <div class="col-12 mb-4">
           <h5 class="text-center mb-2 mt-1 px-0 date-list">Tâches terminées</h5>
@@ -142,10 +138,10 @@
                   <div class="list-group-item d-flex gap-2 task-item" style="background-color: rgb(222, 222, 222);min-width: 400px !important;max-width:400px">
                     <input class="form-check-input flex-shrink-0" type="checkbox" value="1" checked>
                     <a style="text-decoration:none;"href="../public/index.php?action=details&id=<?php echo $task['id_task']; ?>">
-                    <span style="color: gray;">
-                      <strong><?php echo htmlspecialchars($task['name_task']); ?></strong>
-                      <small class="d-block text-body-secondary"><?php echo htmlspecialchars($task['details_task']); ?></small>
-                    </span>
+                      <span style="color: gray;">
+                        <strong><?php echo htmlspecialchars($task['name_task']); ?></strong>
+                        <small class="d-block text-body-secondary"><?php echo htmlspecialchars($task['details_task']); ?></small>
+                      </span>
                     </a>
                   </div>
                 <?php endif; ?>
@@ -158,8 +154,8 @@
   </main>
 
   <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll(".task-item .form-check-input").forEach(checkbox => {
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll(".task-item .form-check-input").forEach(checkbox => {
         checkbox.addEventListener("change", function () {
             const taskId = this.dataset.taskId;
             const isRepeatTask = this.dataset.repeatTask === "1";
@@ -187,28 +183,26 @@
                     console.error('Erreur:', error);
                     this.checked = !this.checked;
                 });
-            }
-        });
-    });
+              }
+          });
+      });
 
-    // Réinitialiser les tâches répétitives
-    document.getElementById("resetRepeatTasksBtn").addEventListener("click", function () {
-        fetch("../public/index.php?action=resetRepeatTask", {
-            method: "POST",
-            credentials: "include"
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                location.reload(); // Recharge la page pour voir les changements
-            } else {
-                alert("Erreur lors de la réinitialisation des tâches répétitives.");
-            }
-        })
-        .catch(error => console.error("Erreur lors de la réinitialisation :", error));
+      document.getElementById("resetRepeatTasksBtn").addEventListener("click", function () {
+          fetch("../public/index.php?action=resetRepeatTask", {
+              method: "POST",
+              credentials: "include"
+          })
+          .then(response => response.json())
+          .then(data => {
+              if (data.success) {
+                  location.reload(); 
+              } else {
+                  alert("Erreur lors de la réinitialisation des tâches répétitives.");
+              }
+          })
+          .catch(error => console.error("Erreur lors de la réinitialisation :", error));
+      });
     });
-});
-
   </script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>

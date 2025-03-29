@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Girly Plan / LOGIN</title>
-    <link rel="stylesheet" href="../style/login.css">
     <link rel="icon" href="../view/icon.png" type="image/png">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../style/login.css">
 </head>
 <body>
     <!-- login with an active account -->
