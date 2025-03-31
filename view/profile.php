@@ -64,11 +64,6 @@
           </a>
         </li>
         <li>
-          <a href="../view/archive.php" class="nav-link py-4 border-bottom rounded-0">
-            <i class="bi bi-archive"></i>
-          </a>
-        </li>
-        <li>
           <a href="../public/index.php?action=create" class="nav-link py-4 border-bottom rounded-0">
             <i class="bi bi-window-plus"></i>
           </a>

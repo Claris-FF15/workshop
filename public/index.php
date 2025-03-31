@@ -60,9 +60,6 @@ switch ($action) {
         $year = isset($_GET['year']) ? (int) $_GET['year'] : date('Y');
         $taskController->getTasksForMonth($month, $year);
         break;
-    case 'archive':
-        $taskController->archive();
-        break;
         case 'edit_user':   
             if ($id) $userController->edit_user($id);
             break;
