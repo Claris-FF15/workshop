@@ -127,5 +127,11 @@ class User {
         $stmt = $this->conn->prepare($query);
         return $stmt->execute([':id_user' => $userId]);
     }
+    public function getAllUsersWithoutPassword() {
+        $query = "SELECT id_user, username, mail, role FROM " . $this->table_name;
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
 

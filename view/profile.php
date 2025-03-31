@@ -95,9 +95,9 @@
             <h3 class="card-title mb-3">Mon Profil</h3>
             <p class="card-text"><strong style="font-family: 'Playfair Display', serif;font-style: italic; margin-right:5px; text-decoration:underline;">Nom d'utilisateur :</strong> <?php echo htmlspecialchars($user['username']); ?></p>
             <p class="card-text"><strong style="font-family: 'Playfair Display', serif;font-style: italic; margin-right:5px;text-decoration:underline;">Email :</strong> <?php echo htmlspecialchars($user['mail']); ?></p>
-                <!-- <?php if ($user['role']===1):
-                    echo '<a href="../public/index.php?action=admin" class="btn btn-primary m-2">admin</a>';?>
-                  <?php endif;?>-->
+               <?php if ($user['role']===1):
+                    echo '<a href="../public/index.php?action=list_users" class="btn btn-primary m-2">Gestion des utilisateurs</a>';?>
+                  <?php endif;?>
             <a href="../public/index.php?action=edit_user&id=<?php echo $user['id_user']; ?>" class="btn btn-primary m-2">Modifier mes données</a>
             <a href="../public/index.php?action=delete_user&id=<?php echo $user['id_user']; ?>" class="btn btn-danger m-2" onclick="return confirm('Êtes-vous sûr de vouloir supprimer votre compte ?');">Supprimer mon compte</a>
           </div>

@@ -79,7 +79,7 @@ class UserController {
         }
     
         $id_user = $_SESSION['id_user'];
-        $query = "SELECT id_user, username, mail FROM tbl_user WHERE id_user = :id_user";
+        $query = "SELECT id_user, username, mail, role FROM tbl_user WHERE id_user = :id_user";
         $stmt = $this->db->prepare($query);
         $stmt->bindParam(":id_user", $id_user, PDO::PARAM_INT);
         $stmt->execute();
@@ -143,6 +143,10 @@ class UserController {
             }
             require_once __DIR__ . '/../view/edit_user.php'; // Affichage du formulaire d'édition
         }
+    }
+    public function getAllUsers() {
+        $users = $this->user->getAllUsersWithoutPassword();
+        require_once __DIR__.'/../view/admin.php';
     }
     
 

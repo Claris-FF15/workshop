@@ -97,8 +97,6 @@ class TaskController {
         }
     }
     
-    
-
     public function details($id_task) {
         $query = "SELECT id_task, name_task, details_task, important_task, repeat_task, end_time_task, statut_task 
                   FROM tbl_task WHERE id_task = :id_task"; 
@@ -177,9 +175,6 @@ class TaskController {
             exit();
         }
     }
-    
-    
-    
     
     public function delete($id) {
         $this->task->id_task = $id;

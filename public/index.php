@@ -72,6 +72,9 @@ switch ($action) {
     case 'delete_account':
         if ($id_user) $userController->delete_account($id_user);
         break;
+    case 'list_users':
+         $userController->getAllUsers();
+        break;
     default:
         $taskController->index();
 }
