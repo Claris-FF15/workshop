@@ -144,25 +144,7 @@ class TaskController {
 
         require_once __DIR__.'/../view/edit.php';
     }
-    
-    public function archive() {
-        if (!isset($_SESSION['id_user'])) {
-            header('Location: /workshop/view/login.php');
-            exit();
-        }
 
-        $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
-        $page = max(1, $page);
-        
-        $result = $this->task->getArchivedTasks($_SESSION['id_user'], $page);
-        
-        if ($result) {
-            error_log("Retrieved " . count($result['tasks']) . " archived tasks"); // Debug log
-            require_once __DIR__ . '/../view/archive.php';
-        } else {
-            echo "Erreur lors de la récupération des tâches archivées.";
-        }
-    }
 
     public function updateStatus() {
         try {

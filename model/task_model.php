@@ -96,51 +96,6 @@ class Task {
         }
     }
 
-    public function getArchivedTasks($userId, $page = 1, $perPage = 10) {
-        try {
-            $offset = ($page - 1) * $perPage;
-            
-            // Requête modifiée pour inclure toutes les colonnes nécessaires
-            $query = "SELECT id_task, name_task, details_task, important_task, end_time_task, statut_task 
-                     FROM " . $this->table_name . " 
-                     WHERE id_user = :user_id 
-                     AND repeat_task = 0 
-                     AND statut_task = 1 
-                     ORDER BY end_time_task DESC 
-                     LIMIT :limit OFFSET :offset";
-            
-            $stmt = $this->conn->prepare($query);
-            $stmt->bindValue(':user_id', $userId, PDO::PARAM_INT);
-            $stmt->bindValue(':limit', $perPage, PDO::PARAM_INT);
-            $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
-            $stmt->execute();
-            $tasks = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            
-            // Compter le total des tâches
-            $countQuery = "SELECT COUNT(*) FROM " . $this->table_name . " 
-                          WHERE id_user = :user_id 
-                          AND repeat_task = 0 
-                          AND statut_task = 1";
-            
-            $countStmt = $this->conn->prepare($countQuery);
-            $countStmt->bindValue(':user_id', $userId, PDO::PARAM_INT);
-            $countStmt->execute();
-            $totalTasks = $countStmt->fetchColumn();
-            
-            error_log("Archived tasks found: " . count($tasks)); // Debug log
-            
-            return [
-                'tasks' => $tasks,
-                'totalTasks' => $totalTasks,
-                'totalPages' => ceil($totalTasks / $perPage),
-                'currentPage' => $page
-            ];
-        } catch (PDOException $e) {
-            error_log("Error in getArchivedTasks: " . $e->getMessage());
-            return ['tasks' => [], 'totalTasks' => 0, 'totalPages' => 0, 'currentPage' => 1];
-        }
-    }
-
     public function getTasksForMonth($month, $year) {
         $query = "SELECT id_task, name_task, DAY(end_time_task) AS day 
                   FROM tbl_task 
