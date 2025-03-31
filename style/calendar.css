@@ -4,7 +4,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f4f4f4;
+  background-color:  rgba(195, 196, 195, 0.333);
   flex-direction: column;
 }
 .header {
@@ -13,10 +13,10 @@ body {
   align-items: center;
   width: 90%;
   max-width: 1000px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .calendar {
-  width: 90%;
+  width: 100%;
   max-width: 1000px;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -32,11 +32,12 @@ body {
   border: 1px solid #ddd;
   border-radius: 5px;
   min-height: 100px;
+  min-width: 100px;
 }
 .day h3 {
   margin: 0;
   font-size: 16px;
-  color: #333;
+  color: rosybrown;
 }
 .tasks {
   margin-top: 5px;
