@@ -148,7 +148,21 @@ class UserController {
         $users = $this->user->getAllUsersWithoutPassword();
         require_once __DIR__.'/../view/admin.php';
     }
-    
+    public function changeRole($id_user) {
+        $user = $this->user->getUserRole($id_user);
+
+        if ($user) {
+            $newRole = ($user['role'] == 1) ? 0 : 1; // Inversion du rôle
+            if ($this->user->updateUserRole($id_user, $newRole)) {
+                header('Location: ../public/index.php');
+                exit();
+            } else {
+                echo "Erreur lors de la mise à jour du rôle.";
+            }
+        } else {
+            echo "Utilisateur introuvable.";
+        }
+    }
 
     public function index() {
         $users = $this->user->read();

@@ -6,23 +6,19 @@
     <title>Girly Plan / Gestion User</title>
     <link rel="icon" href="../view/icon.png" type="image/png">
      <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Bootstrap Icons -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
-<!-- CSS -->
-<link rel="stylesheet" href="../style/main.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../style/main.css">
 
-<!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-
-</head>
-<body>
-            <title>Liste des utilisateurs</title>
-            <style>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <style>
                 table {
                     width: 100%;
                     border-collapse: collapse;
@@ -36,9 +32,9 @@
                     background-color: #f2f2f2;
                 }
             </style>
-        </head>
-        <body>
-            <h2>Liste des utilisateurs</h2>
+</head>
+<body>
+            <h3 class="d-flex justify-content-center mt-2 mb-4">Liste des utilisateurs</h3>
             <table>
                 <tr>
                     <th>ID</th>
@@ -53,7 +49,7 @@
                         <td><?php echo htmlspecialchars($user['username']); ?></td>
                         <td><?php echo htmlspecialchars($user['mail']); ?></td>
                         <td><?php echo htmlspecialchars($user['role']); ?></td>
-                        <td><a class="link_con" href="disable.php?id=<?= $user['id_user'] ?>" >A/D</a> <a href="../public/index.php?action=edit_user&id=<?php echo $user['id_user']; ?>"class="link_con">Modifier</a> <a href="../public/index.php?action=delete_user&id=<?php echo $user['id_user']; ?>" class="btn btn-danger m-2" onclick="return confirm('Êtes-vous sûr de vouloir supprimer le compte ?');">Supprimer</a></td>
+                        <td><a class="link_con" href="../public/index.php?action=changeRole&id=<?= $user['id_user'] ?>" >A/D</a> <a href="../public/index.php?action=delete_user&id=<?php echo $user['id_user']; ?>" class="btn btn-danger m-2" onclick="return confirm('Êtes-vous sûr de vouloir supprimer le compte ?');">Supprimer</a></td>
                     </tr>
                 <?php endforeach; ?>
             </table>

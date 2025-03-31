@@ -65,7 +65,23 @@ class User {
         $stmt->execute([':id_user' => $id_user]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+    public function getUserRole($id_user) {
+        $query = "SELECT role FROM tbl_user WHERE id_user = :id_user";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(":id_user", $id_user, PDO::PARAM_INT);
+        $stmt->execute();
 
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function updateUserRole($id_user, $newRole) {
+        $query = "UPDATE tbl_user SET role = :role WHERE id_user = :id_user";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(":role", $newRole, PDO::PARAM_INT);
+        $stmt->bindParam(":id_user", $id_user, PDO::PARAM_INT);
+
+        return $stmt->execute();
+    }
     public function update($id_user, $username, $mail, $password = null) {
         if ($password) {
             $passwordHash = password_hash($password, PASSWORD_DEFAULT);
