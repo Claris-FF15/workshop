@@ -11,7 +11,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 90%;
+  width: 100%;
   max-width: 1000px;
   margin-bottom: 10px;
 }
@@ -41,7 +41,7 @@ body {
 }
 .tasks {
   margin-top: 5px;
-  font-size: 14px;
+  font-size: 10px;
   color: #666;
 }
 .nav button {
@@ -54,4 +54,13 @@ body {
 }
 .nav button:hover {
   background: #0056b3;
+}
+.btn-danger {
+  background-color: #ffb6c1 !important;
+  border-color: #ffb6c1 !important;
+  color: white;
+}
+.btn-danger:hover {
+  background-color: #e57373 !important;
+  border-color: #e57373 !important;
 }

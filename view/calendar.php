@@ -60,11 +60,11 @@
         </ul>
       </div>
     </section>
-<section style="margin-top:100px;">
+<section style="margin-top:100px; display: inline-grid;">
         <div class="header">
-            <button onclick="prevMonth()">◀ Mois précédent</button>
+            <button class="btn btn-danger" onclick="prevMonth()">◀ Mois précédent</button>
             <h3 id="monthYear"></h3>
-            <button onclick="nextMonth()">Mois suivant ▶</button>
+            <button class="btn btn-danger" onclick="nextMonth()">Mois suivant ▶</button>
         </div>
         <div class="calendar mb-3" id="calendar"></div>
         
