@@ -154,7 +154,7 @@ class UserController {
         if ($user) {
             $newRole = ($user['role'] == 1) ? 0 : 1; // Inversion du rôle
             if ($this->user->updateUserRole($id_user, $newRole)) {
-                header('Location: ../public/index.php');
+                header('Location: ../public/index.php?action=list_users');
                 exit();
             } else {
                 echo "Erreur lors de la mise à jour du rôle.";
