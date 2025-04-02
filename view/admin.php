@@ -25,18 +25,30 @@
                 }
                 th, td {
                     border: 1px solid black;
-                    padding: 8px;
-                    text-align: left;
+                    padding: 5px;
+                    text-align: center;
                 }
                 th {
-                    background-color: #f2f2f2;
+                    background-color:rosybrown;
+                }
+                .btn-danger {
+                background-color: #ffb6c1 !important;
+                border-color: #ffb6c1 !important;
+                color: white;
+                }
+                .btn-danger:hover {
+                background-color: #e57373 !important;
+                border-color: #e57373 !important;
+                }
+                a{
+                    color: purple;
                 }
             </style>
 </head>
 <body>
             <h3 class="d-flex justify-content-center mt-2 mb-4">Liste des utilisateurs</h3>
             <table>
-                <tr>
+                <tr >
                     <th>ID</th>
                     <th>Nom d'utilisateur</th>
                     <th>Email</th>
@@ -49,7 +61,7 @@
                         <td><?php echo htmlspecialchars($user['username']); ?></td>
                         <td><?php echo htmlspecialchars($user['mail']); ?></td>
                         <td><?php echo htmlspecialchars($user['role']); ?></td>
-                        <td><a class="link_con" href="../public/index.php?action=changeRole&id=<?= $user['id_user'] ?>" >A/D</a> <a href="../public/index.php?action=delete_user&id=<?php echo $user['id_user']; ?>" class="btn btn-danger m-2" onclick="return confirm('Êtes-vous sûr de vouloir supprimer le compte ?');">Supprimer</a></td>
+                        <td><a href="../public/index.php?action=changeRole&id=<?= $user['id_user'] ?>" >A/D</a> <a href="../public/index.php?action=delete_user&id=<?php echo $user['id_user']; ?>" class="btn btn-danger m-2" onclick="return confirm('Êtes-vous sûr de vouloir supprimer le compte ?');">Supprimer</a></td>
                     </tr>
                 <?php endforeach; ?>
             </table>

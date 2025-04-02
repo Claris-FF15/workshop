@@ -64,7 +64,7 @@ switch ($action) {
          if ($id) $userController->edit_user($id);
          break;
     case 'changeRole': 
-        if ($id_user) $userController->changeRole($id_user);
+        if ($id) $userController->changeRole($id);
         break;
     case 'profile':
         $userController->getProfile();
