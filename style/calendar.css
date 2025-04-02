@@ -55,12 +55,18 @@ body {
 .nav button:hover {
   background: #0056b3;
 }
-.btn-danger {
+.btn-danger,.btn-close {
   background-color: #ffb6c1 !important;
   border-color: #ffb6c1 !important;
   color: white;
 }
-.btn-danger:hover {
+.btn-danger:hover,.btn-close:hover {
   background-color: #e57373 !important;
   border-color: #e57373 !important;
+}
+a{
+  text-decoration: none !important;
+}
+.modal-header{
+  background-color: rosybrown;
 }

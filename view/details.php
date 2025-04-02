@@ -34,7 +34,9 @@
                 <p><strong>Détails :</strong> <?php echo htmlspecialchars($task['details_task'] ?? 'Non défini'); ?></p>
                 <p><i class="bi bi-star-fill" style="color: rgb(255, 0, 123); font-size: 15px; margin-right:5px;"></i><strong>Important :</strong> <?php echo $task['important_task'] == 1 ? 'Oui' : 'Non'; ?></p>
                 <p><i class="bi bi-arrow-repeat" style="color: rgb(255, 0, 123);font-size: 15px;margin-right:5px;"></i><strong>Répéter :</strong> <?php echo $task['repeat_task'] == 1 ? 'Oui' : 'Non'; ?></p>
+                    <?php if ($task['repeat_task'] !== 1) { ?>
                 <p><strong>Temps de fin :</strong> <?php echo htmlspecialchars($task['end_time_task'] ?? 'Non défini'); ?></p>
+                    <?php } ?>
                 <p><strong>Statut :</strong> <?php echo $task['statut_task'] == 1 ? 'Terminé ✅' : 'En cours ⏳'; ?></p>
                 <?php else: ?>
                 <p>Aucune tâche à afficher.</p>

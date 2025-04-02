@@ -46,6 +46,7 @@
             </style>
 </head>
 <body>
+    <main>
             <h3 class="d-flex justify-content-center mt-2 mb-4">Liste des utilisateurs</h3>
             <table>
                 <tr >
@@ -65,6 +66,8 @@
                     </tr>
                 <?php endforeach; ?>
             </table>
+            <a href="../public/index.php?action=profile" class="btn btn-danger m-3">Retour Profil</a>
+    </main>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>  
 </body>
