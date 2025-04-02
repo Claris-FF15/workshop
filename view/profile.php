@@ -69,7 +69,7 @@
           </a>
         </li>
         <li>
-          <a href="../public/index.php?action=getTasksForMonth&month=${month}&year=${year}" class="nav-link py-4 border-bottom rounded-0">
+          <a href="../view/calendar.php" class="nav-link py-4 border-bottom rounded-0">
             <i class="bi bi-calendar-week"></i>
           </a>
         </li>

@@ -96,7 +96,7 @@ form input[type="date"]{
     align-items: center;
     justify-content: center;
 }
-form .form-check-input:checked{
+.form-check-input:checked{
     background-color: rosybrown !important;
     border-color: goldenrod !important;
 

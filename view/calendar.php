@@ -20,12 +20,36 @@
 <body>
 
 <main>
-    <section class="d-flex flex-column flex-shrink-0 bg-light Sidebar">
-        <ul class="nav flex-column mb-auto align-items-center">
-            <li><a href="../public/index.php" class="nav-link active py-4 border-bottom rounded-0"><i class="bi bi-house-door"></i></a></li>
-            <li><a href="../public/index.php?action=create" class="nav-link py-4 border-bottom rounded-0"><i class="bi bi-window-plus"></i></a></li>
-            <li><a href="../view/calendar.php" class="nav-link py-4 border-bottom rounded-0"><i class="bi bi-calendar-week"></i></a></li>
+<section class="d-flex flex-column flex-shrink-0 bg-light Sidebar">
+      <ul class="nav flex-column mb-auto align-items-center">
+        <li>
+          <a href="../public/index.php" class="nav-link active py-4 border-bottom rounded-0">
+            <i class="bi bi-house-door"></i>
+          </a>
+        </li>
+        <li>
+          <a href="../public/index.php?action=create" class="nav-link py-4 border-bottom rounded-0">
+            <i class="bi bi-window-plus"></i>
+          </a>
+        </li>
+        <li>
+          <a href="../view/calendar.php" class="nav-link py-4 border-bottom rounded-0">
+            <i class="bi bi-calendar-week"></i>
+          </a>
+        </li>
+      </ul>
+      <div class="dropdown border-top">
+        <a href="#" class="d-flex align-items-center justify-content-center p-4 link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="https://i.pinimg.com/736x/cf/17/69/cf1769f499bed0b34d0608086e865b76.jpg" alt="user" width="30" height="30" class="rounded-circle">
+        </a>
+        <ul class="dropdown-menu text-small shadow">
+          <li><a class="dropdown-item" href="../public/index.php?action=profile" style="color:rosybrown;font-family: 'Playfair Display', serif;
+          font-style: italic;">Profil</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="../public/index.php?action=logout" style="color:rosybrown;font-family: 'Playfair Display', serif;
+          font-style: italic;">Déconnexion</a></li>
         </ul>
+      </div>
     </section>
 
     <section style="margin-top:100px; display: inline-grid;">
