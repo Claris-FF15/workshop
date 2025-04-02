@@ -50,14 +50,39 @@
                 <textarea name="details_task" id="details_task" class="form-control w-75" ></textarea>
 
                 <!-- End Time -->
-                <label for="end_time_task" id="end_time_task" class="mt-3 mb-2">End Time</label>
-                <input type="date" name="end_time_task" id="end_time_task" required class="w-75" style="border-radius: 25px !important; border: solid 1px rosybrown !important;">
+                <div id="end_time" style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+                    <label for="end_time_task" id="end_time_task_label" class="mt-3 mb-2">End Time</label>
+                    <input type="date" name="end_time_task" id="end_time_task" required class="w-75" style="border-radius: 25px !important; border: solid 1px rosybrown !important;">
+                </div>
+
 
                 <!-- Submit Button -->
                 <button type="submit" class="btn btn-primary mt-5 w-75" style="background-color:rosybrown;border:none;">Add Task</button>
             </form>
         </section>
     </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const repeatTaskCheckbox = document.getElementById("repeat_task");
+            const endTimeTask = document.getElementById("end_time_task");
+            const endTimeContainer = document.getElementById("end_time");
+
+            function updateEndTime() {
+                if (repeatTaskCheckbox.checked) {
+                    const today = new Date().toISOString().split('T')[0]; // Date du jour (YYYY-MM-DD)
+                    endTimeTask.value = today; // Définit la date d'aujourd'hui
+                    endTimeContainer.style.display = "none"; // Cache tout le bloc (label + input)
+                } else {
+                    endTimeContainer.style.display = "block"; // Affiche tout le bloc
+                    endTimeTask.value = ""; // Permet de choisir une date normalement
+                }
+            }
+
+            repeatTaskCheckbox.addEventListener("change", updateEndTime);
+            updateEndTime(); // Exécute une première fois au chargement
+        });
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 </body>
