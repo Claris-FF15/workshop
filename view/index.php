@@ -68,7 +68,7 @@
             </script>
           </h5>
           <div class="d-flex flex-column align-items-center justify-content-center w-100">
-            <div class="list-group mt-1" style="min-width: 400px;max-width:400px">
+            <div class="list-group mt-1">
               <?php
                 $today = date("Y-m-d");
               ?>
@@ -106,7 +106,7 @@
             <button type="button" class="mx-2" id="resetRepeatTasksBtn"><i class="bi bi-arrow-repeat" style="font-size: 20px;"></i></button>
           </h5>
           <div class="d-flex flex-column align-items-center justify-content-center w-100">
-            <div class="list-group mt-1 " style="min-width: 400px;max-width:400px">
+            <div class="list-group mt-1 ">
               <?php foreach ($tasks as $task):?>
                 <?php if ($task['id_user'] == $_SESSION['id_user'] && $task['repeat_task'] == 1 && $task['statut_task'] == 0): ?>
                   <div class="list-group-item d-flex gap-2 task-item">
@@ -130,7 +130,7 @@
             <div class="list-group main_content">
               <?php foreach ($tasks as $task):?>
                 <?php if ($task['id_user'] == $_SESSION['id_user'] && $task['end_time_task'] == $today && $task['statut_task'] == 1 && $task['repeat_task'] == 0):?>
-                  <div class="list-group-item d-flex gap-2 task-item" style="background-color: rgb(222, 222, 222);min-width: 400px !important;max-width:400px">
+                  <div class="list-group-item d-flex gap-2 task-item" style="background-color: rgb(222, 222, 222);>
                     <input class="form-check-input flex-shrink-0" type="checkbox" value="1" checked>
                     <a style="text-decoration:none;"href="../public/index.php?action=details&id=<?php echo $task['id_task']; ?>">
                       <span style="color: gray;">

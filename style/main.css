@@ -38,6 +38,10 @@ i:hover {
     color: rgb(255, 0, 123);
     text-decoration-color: rgb(255, 0, 123);
 }
+/* task */
+.list-group{
+    min-width: 400px;max-width:400px
+}
 
 /* Media Queries */
 @media (max-width: 950px) {
@@ -84,6 +88,10 @@ i:hover {
     }
     i {
         font-size: 20px;
+    }
+    .list-group{
+        max-width: 300px !important;
+        min-width: 250px;
     }
 }
 
