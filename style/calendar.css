@@ -70,3 +70,71 @@ a{
 .modal-header{
   background-color: rosybrown;
 }
+@media (max-width: 950px) {
+  .calendar {
+    margin-bottom: 100px !important;
+    grid-template-columns: repeat(4, 1fr); /* Réduit à 4 colonnes sur les écrans moyens */
+    gap: 5px;
+    padding: 10px;
+  }
+
+  .day {
+    min-height: 80px;
+    min-width: 80px;
+    font-size: 14px;
+  }
+
+  .day h3 {
+    font-size: 14px;
+  }
+
+  .header {
+    flex-direction: column;
+    text-align: center;
+    margin-top: 325px;
+  }
+
+  .header button {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+}
+
+@media (max-width: 600px) {
+  .calendar {
+    grid-template-columns: repeat(3, 1fr); /* Réduit à 3 colonnes sur les petits écrans */
+  }
+
+  .day {
+    min-height: 70px;
+    min-width: 70px;
+  }
+
+  .header button {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 400px) {
+  .calendar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .day {
+    min-height: 60px;
+    min-width: 60px;
+    padding: 5px;
+  }
+
+  .day h3 {
+    font-size: 12px;
+  }
+  .header{
+    margin-top: 650px !important;
+  }
+
+  .tasks {
+    font-size: 8px;
+  }
+}

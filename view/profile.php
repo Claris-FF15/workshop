@@ -14,44 +14,12 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="../style/main.css">
+  <link rel="stylesheet"href="../style/profile.css">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-    <style>
-        body {
-          background-color: rgba(195, 196, 195, 0.333);
-            font-family: 'Arial', sans-serif;
-        }
-        .card {
-            background-color: #fff5f5;
-            border: 2px solid rosybrown;
-            border-radius: 15px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .card-title {
-            color: rosybrown;
-            font-weight: bold;
-        }
-        .btn-primary {
-            background-color: rosybrown;
-            border-color: rosybrown;
-        }
-        .btn-primary:hover {
-            background-color: #b78484;
-            border-color: #b78484;
-        }
-        .btn-danger {
-            background-color: #ffb6c1;
-            border-color: #ffb6c1;
-            color: white;
-        }
-        .btn-danger:hover {
-            background-color: #e57373;
-            border-color: #e57373;
-        }
-    </style>
 </head>
 <body>
   <main>
@@ -93,8 +61,8 @@
           <div class="card-body text-center">
             <img src="https://i.pinimg.com/736x/cf/17/69/cf1769f499bed0b34d0608086e865b76.jpg" alt="user" width="50" height="50" class="rounded-circle mb-2">
             <h3 class="card-title mb-3">Mon Profil</h3>
-            <p class="card-text"><strong style="font-family: 'Playfair Display', serif;font-style: italic; margin-right:5px; text-decoration:underline;">Nom d'utilisateur :</strong> <?php echo htmlspecialchars($user['username']); ?></p>
-            <p class="card-text"><strong style="font-family: 'Playfair Display', serif;font-style: italic; margin-right:5px;text-decoration:underline;">Email :</strong> <?php echo htmlspecialchars($user['mail']); ?></p>
+            <p class="card-text"><strong class="text">Nom d'utilisateur :</strong> <?php echo htmlspecialchars($user['username']); ?></p>
+            <p class="card-text"><strong class="text">Email :</strong> <?php echo htmlspecialchars($user['mail']); ?></p>
                <?php if ($user['role']===1):
                     echo '<a href="../public/index.php?action=list_users" class="btn btn-primary m-2">Gestion des utilisateurs</a>';?>
                   <?php endif;?>

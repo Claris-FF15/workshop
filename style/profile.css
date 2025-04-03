@@ -1,0 +1,49 @@
+body {
+    background-color: rgba(195, 196, 195, 0.333);
+      font-family: 'Arial', sans-serif;
+  }
+  .card {
+      background-color: #fff5f5;
+      border: 2px solid rosybrown;
+      border-radius: 15px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .card-title {
+      color: rosybrown;
+      font-weight: bold;
+  }
+  .text{
+    font-family: 'Playfair Display', serif;
+    font-style: italic; 
+    margin-right:5px; 
+    text-decoration:underline;
+  }
+  .btn-primary {
+      background-color: rosybrown;
+      border-color: rosybrown;
+  }
+  .btn-primary:hover {
+      background-color: #b78484;
+      border-color: #b78484;
+  }
+  .btn-danger {
+      background-color: #ffb6c1;
+      border-color: #ffb6c1;
+      color: white;
+  }
+  .btn-danger:hover {
+      background-color: #e57373;
+      border-color: #e57373;
+  }
+  @media (max-width: 950px){
+    .mt-5{
+    margin-top: 20px !important;
+    }
+  }
+  @media (max-width:400px) {
+    .container{
+        z-index: -1;
+        margin-bottom: 55px;
+    }
+    
+  }

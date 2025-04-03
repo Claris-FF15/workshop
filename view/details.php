@@ -37,7 +37,9 @@
                     <?php if ($task['repeat_task'] !== 1) { ?>
                 <p><strong>Temps de fin :</strong> <?php echo htmlspecialchars($task['end_time_task'] ?? 'Non défini'); ?></p>
                     <?php } ?>
+                    <?php if ($task['repeat_task'] !== 1) { ?>
                 <p><strong>Statut :</strong> <?php echo $task['statut_task'] == 1 ? 'Terminé ✅' : 'En cours ⏳'; ?></p>
+                    <?php } ?>
                 <?php else: ?>
                 <p>Aucune tâche à afficher.</p>
                 <?php endif; ?>
