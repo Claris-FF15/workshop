@@ -24,7 +24,7 @@
         <section>
             <div class="d-flex flex-row align-items-center justify-content-center mt-3 gap-2">
                 <a href="../public/index.php?action=profile" class="button_back me-2"><i class="bi bi-arrow-left"></i></a>
-                <h1 class="mt-1 text-center">Edit Profil</h1>
+                <h1 class="mt-1 text-center">Modifier Profil</h1>
             </div>
 
             <form action="" method="POST" class="d-flex flex-column align-items-center justify-content-center w-100 mt-4">
@@ -43,7 +43,7 @@
                 <input type="password" id="password" name="password" class="w-75 form-control" style="border-radius: 20px;border-color: rosybrown;" placeholder="Nouveau mot de passe">
 
                 <!-- Submit Button -->
-                <button type="submit" class="btn btn-primary mt-5 w-75" style="background-color:rosybrown;border:none;">Update profil</button>
+                <button type="submit" class="btn btn-primary mt-5 w-75" style="background-color:rosybrown;border:none;">Modifier</button>
             </form>
         </section>
     </main>

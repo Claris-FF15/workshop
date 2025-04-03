@@ -25,39 +25,39 @@
             <!-- Header with back button -->
             <div class="d-flex flex-row align-items-center justify-content-center mt-3 gap-2">
                 <a href="../public/index.php" class="button_back me-2" aria-label="Back to home page"><i class="bi bi-arrow-left"></i></a>
-                <h1 class="mt-1 text-center">Add Task</h1>
+                <h1 class="mt-1 text-center">Créer une tâche</h1>
             </div>
             <!-- Form to add new task -->
-            <form action="index.php?action=create" method="post" class="d-flex flex-column align-items-center justify-content-center w-100 mt-4">
+            <form action="index.php?action=create" method="post" class="d-flex flex-column align-items-center justify-content-center w-100 mt-3">
                 <!-- Task Name -->
-                <label for="task" id="task" class="mt-3 mb-2">Name</label>
+                <label for="task" id="task" class="mt-3 mb-2">Nom</label>
                 <input type="text" name="task" id="task" required class="form-control w-75" style="border-radius: 25px !important; border: solid 1px rosybrown !important;">
 
                 <!-- Important Task Checkbox -->
                 <div class="d-flex flex-row align-items-center justify-content-center mt-3">
                     <input type="checkbox" name="important_task" id="important_task" class="form-check-input flex-shrink-0 mt-1 mx-2">
-                    <span>Important Task</span>
+                    <span>Tâche Importante</span>
                 </div>
 
                 <!-- Repeat Task Checkbox -->
                 <div class="d-flex flex-row align-items-center justify-content-center mt-3">
                     <input type="checkbox" name="repeat_task" id="repeat_task" class="form-check-input flex-shrink-0 mt-1 mx-2">
-                    <span>Repeat Task</span>
+                    <span>Tâche Répétitive</span>
                 </div>
 
                 <!-- Task Details -->
-                <label for="details_task" id="details_task" class="mt-3 mb-2">Details</label>
+                <label for="details_task" id="details_task" class="mt-3 mb-2">Détails</label>
                 <textarea name="details_task" id="details_task" class="form-control w-75" ></textarea>
 
                 <!-- End Time -->
                 <div id="end_time">
-                    <label for="end_time_task" id="end_time_task_label" class="mt-3 mb-2">End Time</label>
+                    <label for="end_time_task" id="end_time_task_label" class="mt-3 mb-2">Date de fin</label>
                     <input type="date" name="end_time_task" id="end_time_task" required class="w-75" style="border-radius: 25px !important; border: solid 1px rosybrown !important;">
                 </div>
 
 
                 <!-- Submit Button -->
-                <button type="submit" class="btn btn-primary mt-5 w-75" style="background-color:rosybrown;border:none;">Add Task</button>
+                <button type="submit" class="btn btn-primary mt-5 mb-2 w-75" style="background-color:rosybrown;border:none;">Ajouter</button>
             </form>
         </section>
     </main>

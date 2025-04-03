@@ -24,7 +24,7 @@
         <section>
             <div class="d-flex flex-row align-items-center justify-content-center mt-3 gap-2">
                 <a href="../public/index.php" class="button_back me-2"><i class="bi bi-arrow-left"></i></a>
-                <h1 class="mt-1 text-center">Edit Task</h1>
+                <h1 class="mt-1 text-center">Modifier une tâche</h1>
             </div>
 
             <form action="../public/index.php?action=edit&id=<?php echo htmlspecialchars($task['id_task']); ?>" method="post" class="d-flex flex-column align-items-center justify-content-center w-100 mt-4">
@@ -33,31 +33,32 @@
                 <input type="hidden" name="id_task" value="<?php echo htmlspecialchars($task['id_task']); ?>">
 
                 <!-- Task Name -->
-                <label for="name_task" class="mb-2">Task Name</label>
+                <label for="name_task" class="mb-2">Nom</label>
                 <input type="text" name="name_task" id="name_task" class="w-75 form-control" style="border-radius: 20px;border-color: rosybrown;"value="<?php echo htmlspecialchars($task['name_task']); ?>">
 
                 <!-- Important Task Checkbox -->
                 <div class="form-check mt-3">
                     <input type="checkbox" name="important_task" id="important_task" class="form-check-input" <?php echo ($task['important_task'] == 1) ? 'checked' : ''; ?>>
-                    <label for="important_task" class="form-check-label">Important Task</label>
+                    <label for="important_task" class="form-check-label">Tâche Importante</label>
                 </div>
 
                 <!-- Repeat Task Checkbox -->
                 <div class="form-check mt-3">
                     <input type="checkbox" name="repeat_task" id="repeat_task" class="form-check-input" <?php echo ($task['repeat_task'] == 1) ? 'checked' : ''; ?>>
-                    <label for="repeat_task" class="form-check-label">Repeat Task</label>
+                    <label for="repeat_task" class="form-check-label">Tâche Répétitive</label>
                 </div>
 
                 <!-- Task Details -->
-                <label for="details_task" class="mt-3 mb-2">Details</label>
+                <label for="details_task" class="mt-3 mb-2">Détails</label>
                 <textarea name="details_task" id="details_task" class="w-75 form-control"><?php echo htmlspecialchars($task['details_task']); ?></textarea>
 
                 <!-- Task Date -->
-                <label for="end_time_task" class="mt-3 mb-2">End Time</label>
-                <input type="date" name="end_time_task" id="end_time_task" class="w-75 form-control"style="border-radius: 20px;border-color: rosybrown;" value="<?php echo htmlspecialchars($task['end_time_task']); ?>">
-
+                <?php if ($task['repeat_task'] !== 1) { ?>
+                    <label for="end_time_task" class="mt-3 mb-2">Date de fin</label>
+                    <input type="date" name="end_time_task" id="end_time_task" class="w-75 form-control"style="border-radius: 20px;border-color: rosybrown;" value="<?php echo htmlspecialchars($task['end_time_task']); ?>">
+                <?php } ?>
                 <!-- Submit Button -->
-                <button type="submit" class="btn btn-primary mt-5 w-75"  style="background-color:rosybrown;border:none;">Update Task</button>
+                <button type="submit" class="btn btn-primary mt-5 w-75"  style="background-color:rosybrown;border:none;">Modifier</button>
             </form>
         </section>
     </main>
