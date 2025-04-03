@@ -150,19 +150,27 @@ class UserController {
     }
     public function changeRole($id_user) {
         $user = $this->user->getUserRole($id_user);
-
+    
         if ($user) {
             $newRole = ($user['role'] == 1) ? 0 : 1; // Inversion du rôle
             if ($this->user->updateUserRole($id_user, $newRole)) {
-                header('Location: ../public/index.php?action=list_users');
+                // Réponse JSON pour l'AJAX
+                header('Content-Type: application/json');
+                echo json_encode([
+                    'success' => true,
+                    'newRole' => $newRole
+                ]);
                 exit();
             } else {
-                echo "Erreur lors de la mise à jour du rôle.";
+                echo json_encode(['success' => false, 'error' => 'Erreur lors de la mise à jour du rôle.']);
+                exit();
             }
         } else {
-            echo "Utilisateur introuvable.";
+            echo json_encode(['success' => false, 'error' => 'Utilisateur introuvable.']);
+            exit();
         }
     }
+    
 
     public function index() {
         $users = $this->user->read();
