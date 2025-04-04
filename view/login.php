@@ -23,7 +23,7 @@
                     <input type="password" name="password" placeholder="Mot de passe" required>
                     <i class='bx bxs-lock-alt'></i>
                 </div>
-                <div class="form-check">
+                <div class="form-check" style="margin-bottom: 10px;">
                     <input type="checkbox" name="remember" id="remember" class="form-check-input" style="margin-right:5px;">
                     <label for="remember" class="form-check-label">Se souvenir de moi</label>
                 </div>
