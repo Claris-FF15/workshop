@@ -130,7 +130,7 @@
             <div class="list-group main_content">
               <?php foreach ($tasks as $task):?>
                 <?php if ($task['id_user'] == $_SESSION['id_user'] && $task['end_time_task'] == $today && $task['statut_task'] == 1 && $task['repeat_task'] == 0):?>
-                  <div class="list-group-item d-flex gap-2 task-item" style="background-color: rgb(222, 222, 222);>
+                  <div class="list-group-item d-flex gap-2 task-item" style="background-color: rgb(222, 222, 222);">
                     <input class="form-check-input flex-shrink-0" type="checkbox" value="1" checked>
                     <a style="text-decoration:none;"href="../public/index.php?action=details&id=<?php echo $task['id_task']; ?>">
                       <span style="color: gray;">

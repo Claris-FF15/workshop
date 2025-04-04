@@ -53,20 +53,20 @@ class TaskController {
     }
     
 
-    public function toggleActif($id) {
-        $query = "SELECT statut_task FROM tbl_task WHERE id = :id_task";
+    public function toggleActif($id_task) {
+        $query = "SELECT statut_task FROM tbl_task WHERE id_task = :id_task";
         $stmt = $this->db->prepare($query);
-        $stmt->bindParam(":id_task", $id, PDO::PARAM_INT);
+        $stmt->bindParam(":id_task", $id_task, PDO::PARAM_INT);
         $stmt->execute();
 
         if ($stmt->rowCount() > 0) {
             $task = $stmt->fetch(PDO::FETCH_ASSOC);
-            $newStatut = ($task['statut_task'] == 1) ? 0 : 1;
+            $newStatut = ($task['statut_task'] == 1 || 0) ? 0 : 1;
 
-            $updateQuery = "UPDATE tbl_task SET statut_task = :statut_task WHERE id = :id_task";
+            $updateQuery = "UPDATE tbl_task SET statut_task = :statut_task WHERE id_task = :id_task";
             $updateStmt = $this->db->prepare($updateQuery);
             $updateStmt->bindParam(":statut_task", $newStatut, PDO::PARAM_INT);
-            $updateStmt->bindParam(":id_task", $id, PDO::PARAM_INT);
+            $updateStmt->bindParam(":id_task", $id_task, PDO::PARAM_INT);
 
             if ($updateStmt->execute()) {
                 header('Location: ../public/index.php');
