@@ -35,6 +35,15 @@
    ```bash
    git clone https://github.com/Claris-FF15/workshop.git
    cd workshop
+   ```
+   
+2. **Configurer la base de données :**
+Importer le fichier db_app.sql dans votre SGBD (ex: phpMyAdmin ou MySQL CLI).
+Modifier les informations de connexion à la base de données dans le fichier de configuration (dans le dossier config/).
+3. **Démarrer le serveur local :**
+Utilisez un serveur local comme XAMPP, WAMP ou MAMP.
+Placez le projet dans le dossier htdocs (ou équivalent).
+Accédez au site via http://localhost/workshop/public.
 
 ## 🗂️ Structure du projet
 
