@@ -36,16 +36,17 @@
    git clone https://github.com/Claris-FF15/workshop.git
    cd workshop
 
-## Structure du project
+## 🗂️ Structure du projet
+
 workshop/
 │
-├── config/         → Configuration de la base de données
-├── controller/     → Contrôleurs (logique applicative)
-├── model/          → Modèles (interaction avec la base de données)
-├── view/           → Vues HTML (pages affichées à l'utilisateur)
-├── public/         → Point d’entrée principal + ressources publiques
-├── style/          → Feuilles de style CSS
-└── db_app.sql      → Script SQL pour générer la base de données
+├── config/ → Configuration de la base de données
+├── controller/ → Contrôleurs (logique applicative)
+├── model/ → Modèles (interaction avec la base de données)
+├── view/ → Vues HTML (pages affichées à l'utilisateur)
+├── public/ → Point d’entrée principal + ressources publiques
+├── style/ → Feuilles de style CSS
+└── db_app.sql → Script SQL pour générer la base de données
 
 ## 🔐 Utilisation
 
